@@ -1,6 +1,6 @@
 
-export * from "./channel"
-export * from "./expose"
-export * from "./types"
-export * from "./wrap"
+export * from "./channel.js"
+export * from "./expose.js"
+export * from "./types.js"
+export * from "./wrap.js"
 

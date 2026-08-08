@@ -1,8 +1,8 @@
 import { customAlphabet } from "nanoid"
 import PLazy from "p-lazy"
 import { Observable, Subject, concatWith, dematerialize, filter, firstValueFrom, from, takeUntil, throwError } from "rxjs"
-import { Channel } from "./channel"
-import { Proxied, Request, Response, Target } from "./types"
+import { Channel } from "./channel.js"
+import { Proxied, Request, Response, Target } from "./types.js"
 
 export const WORKER_CLOSE = Symbol()
 
@@ -100,10 +100,4 @@ export class ObservableAndPromise<T> extends Observable<T> implements PromiseLik
  */
 export function createStringIdGenerator(length = 22) {
     return customAlphabet("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", length)
-}
-export function createIncrementingIdGenerator() {
-    var id = 0
-    return () => {
-        return id++
-    }
 }

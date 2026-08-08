@@ -1,7 +1,7 @@
 
-import { BehaviorSubject, Observable, filter, fromEvent, mergeMap, switchMap, takeUntil, tap, throwError } from "rxjs";
+import { BehaviorSubject, Observable, filter, fromEvent, mergeMap, switchMap, takeUntil, throwError } from "rxjs";
 import { HasEventTargetAddRemove } from "rxjs/internal/observable/fromEvent";
-import { Batcher, BatcherOptions } from "./batcher";
+import { Batcher, BatcherOptions } from "./batcher.js";
 
 /**
  * A connection is used to send and receive messages.
@@ -52,20 +52,6 @@ export namespace Channel {
                     batcher.process()
                     connection.close()
                 }
-            }
-        }
-    }
-
-    export function logging<I, O>(channel: Channel<I, O>, name: string = "Untitled"): Channel<I, O> {
-        return () => {
-            const connection = channel()
-            return {
-                observe: connection.observe.pipe(tap(emission => console.log("Received emission on channel " + name + ".", emission))),
-                send: value => {
-                    console.log("Sending emission on channel " + name + ".", value)
-                    connection.send(value)
-                },
-                close: connection.close,
             }
         }
     }

@@ -1,7 +1,7 @@
 
 import { defer, filter, isObservable, map, materialize, mergeMap, of, share, takeUntil } from "rxjs"
-import { Channel } from "./channel"
-import { Allowed, Request, Response, SubscribeRequest, Target } from "./types"
+import { Channel } from "./channel.js"
+import { Allowed, Request, Response, SubscribeRequest, Target } from "./types.js"
 
 export interface ExposeConfig<T extends Target> {
 

@@ -14,19 +14,17 @@
         "noFallthroughCasesInSwitch": true,
         "useUnknownInCatchVariables": true,
         "exactOptionalPropertyTypes": true,
+        "moduleResolution": "nodenext",
+        "module": "nodenext",
         "target": "esnext",
         "declaration": true,
-        "declarationDir": "dist",
-        "emitDeclarationOnly": true,
-        "esModuleInterop": true,
-        "moduleResolution": "node",
+        "sourceMap": true,
         "skipLibCheck": true,
+        "rootDir": "src",
+        "outDir": "dist",
         "lib": [
             "esnext",
             "webworker"
         ]
-    },
-    "include": [
-        "src"
-    ]
+    }
 }
