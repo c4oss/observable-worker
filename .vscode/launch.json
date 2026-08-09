@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Watch Chaos Worker",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": [
+                "watch"
+            ],
+        }
+    ]
+}
